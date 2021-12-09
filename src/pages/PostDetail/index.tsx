@@ -5,11 +5,15 @@
  */
 
 import React from 'react'
+import { useParams } from 'react-router-dom'
 
 const PostDetail: React.FC = () => {
+  const params = useParams()
+
   return (
     <>
-      <h1>PostDetail</h1>
+      <h3 className='m-4'>PostDetail</h3>
+      <p className='mx-4'>{JSON.stringify(params)}</p>
     </>
   )
 }

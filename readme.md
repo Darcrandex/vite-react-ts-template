@@ -17,3 +17,12 @@
   }
 }
 ```
+
+## mobx
+
+```bash
+yarn add mobx mobx-react-lite
+```
+
+新建一个工具函数 `/src/utils/create-mobx-store.ts`
+在`/src/stores`文件夹中定义各个模块
