@@ -5,16 +5,14 @@
  */
 
 import React from 'react'
-import { Routes, Route } from 'react-router-dom'
-
-import Home from './pages/Home'
-import About from './pages/About'
-import Posts from './pages/Posts'
-import PostDetail from './pages/PostDetail'
+import { useRoutes } from 'react-router-dom'
+import routes from './routes'
 
 import CustomLink from './components/CustomLink'
+// 懒加载组件
 
 const App: React.FC = () => {
+  const routeElements = useRoutes(routes)
   return (
     <>
       <h1 className='m-4 font-serif'>React App</h1>
@@ -22,16 +20,7 @@ const App: React.FC = () => {
       <CustomLink to='/about'>About</CustomLink>
       <hr />
 
-      <Routes>
-        <Route path='/' element={<Home />}>
-          <Route path='posts' element={<Posts />}>
-            <Route path=':id' element={<PostDetail />} />
-          </Route>
-        </Route>
-        <Route path='/about' element={<About />} />
-
-        <Route path='*' element={<p>There's nothing here!</p>} />
-      </Routes>
+      {routeElements}
     </>
   )
 }

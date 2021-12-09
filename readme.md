@@ -26,3 +26,7 @@ yarn add mobx mobx-react-lite
 
 新建一个工具函数 `/src/utils/create-mobx-store.ts`
 在`/src/stores`文件夹中定义各个模块
+
+## react router v6
+
+本例中, 使用 `useRoutes` 来配置路由, 并结合了权限校验.
