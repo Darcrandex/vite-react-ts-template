@@ -8,6 +8,7 @@
     "style": "stylelint --cache --fix --ignore-path .gitignore '**/*.css'"
   },
   "dependencies": {
+    "antd": "^4.17.3",
     "mobx": "^6.3.8",
     "mobx-react-lite": "^3.2.2",
     "react": "^17.0.2",
@@ -21,12 +22,14 @@
     "@vitejs/plugin-legacy": "^1.6.4",
     "@vitejs/plugin-react": "^1.0.7",
     "autoprefixer": "^10.4.0",
+    "less": "^4.1.2",
     "postcss": "^8.4.4",
     "stylelint": "^14.1.0",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-standard": "^24.0.0",
     "tailwindcss": "^2.2.19",
     "typescript": "^4.5.2",
-    "vite": "^2.7.0"
+    "vite": "^2.7.0",
+    "vite-plugin-style-import": "^1.4.0"
   }
 }

@@ -6,6 +6,7 @@
 
 import React from 'react'
 import { observer } from 'mobx-react-lite'
+import { DatePicker } from 'antd'
 import { counter } from '@/stores/counter'
 
 const About: React.FC = () => {
@@ -23,6 +24,8 @@ const About: React.FC = () => {
           add
         </button>
       </p>
+
+      <DatePicker />
     </>
   )
 }
