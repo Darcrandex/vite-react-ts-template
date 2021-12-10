@@ -1,5 +1,5 @@
-import { Authorization } from '../enums'
-import { createStore } from '../utils/create-mobx-store'
+import { Authorization } from '@/enums'
+import { createStore } from '@/utils/create-mobx-store'
 
 export const user = createStore({
   info: {

@@ -29,4 +29,4 @@ yarn add mobx mobx-react-lite
 
 ## react router v6
 
-本例中, 使用 `useRoutes` 来配置路由, 并结合了权限校验.
+本例中, 使用 `useRoutes` 来配置路由, 并结合了权限校验和懒加载.

@@ -6,10 +6,8 @@
 
 import React from 'react'
 import { useRoutes } from 'react-router-dom'
-import routes from './routes'
-
-import CustomLink from './components/CustomLink'
-// 懒加载组件
+import routes from '@/routes'
+import CustomLink from '@/components/CustomLink'
 
 const App: React.FC = () => {
   const routeElements = useRoutes(routes)

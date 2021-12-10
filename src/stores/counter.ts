@@ -1,5 +1,5 @@
 import { runInAction } from 'mobx'
-import { createStore } from '../utils/create-mobx-store'
+import { createStore } from '@/utils/create-mobx-store'
 
 function sleep(ms = 1000) {
   return new Promise<void>((resolve) => {

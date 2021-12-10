@@ -6,8 +6,8 @@
 
 import React from 'react'
 import { observer } from 'mobx-react-lite'
-import { Authorization } from '../../enums'
-import { user } from '../../stores/user'
+import { Authorization } from '@/enums'
+import { user } from '@/stores/user'
 
 const AuthWrapper: React.FC<{ roles?: Authorization[] }> = ({ children, roles }) => {
   if (!user.checkRoles(roles)) {

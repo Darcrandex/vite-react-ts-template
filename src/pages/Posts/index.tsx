@@ -6,7 +6,7 @@
 
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-import CustomLink from '../../components/CustomLink'
+import CustomLink from '@/components/CustomLink'
 
 const Posts: React.FC = () => {
   return (
