@@ -8,15 +8,9 @@
 
 编辑器安装扩展: `PostCSS Language Support`
 
-### 使用 stylelint
+### 与 antd 结合
 
-```json
-{
-  "scripts": {
-    "style": "stylelint --cache --fix --ignore-path .gitignore '**/*.css'"
-  }
-}
-```
+可以与 antd 同时使用, 并实现按需加载.
 
 ## mobx
 

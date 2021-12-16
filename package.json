@@ -5,7 +5,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "style": "stylelint --cache --fix --ignore-path .gitignore '**/*.css'"
+    "lint": "eslint ./src --ext .js,.ts,.tsx --fix"
   },
   "dependencies": {
     "antd": "^4.17.3",
@@ -19,15 +19,19 @@
     "@types/node": "^16.11.12",
     "@types/react": "^17.0.33",
     "@types/react-dom": "^17.0.10",
+    "@typescript-eslint/eslint-plugin": "^5.7.0",
+    "@typescript-eslint/parser": "^5.7.0",
     "@vitejs/plugin-legacy": "^1.6.4",
     "@vitejs/plugin-react": "^1.0.7",
     "autoprefixer": "^10.4.0",
+    "eslint": "^8.4.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.27.1",
+    "eslint-plugin-react-hooks": "^4.3.0",
     "less": "^4.1.2",
     "postcss": "^8.4.4",
-    "stylelint": "^14.1.0",
-    "stylelint-config-prettier": "^9.0.3",
-    "stylelint-config-standard": "^24.0.0",
-    "tailwindcss": "^2.2.19",
+    "tailwindcss": "^3.0.5",
     "typescript": "^4.5.2",
     "vite": "^2.7.0",
     "vite-plugin-style-import": "^1.4.0"
