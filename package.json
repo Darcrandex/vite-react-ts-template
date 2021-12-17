@@ -1,6 +1,11 @@
 {
-  "name": "vite-react-template",
-  "version": "0.0.0",
+  "name": "vite-react-ts-template",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": {
+    "name": "darcrand",
+    "email": "darcrandex@gmail.com"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

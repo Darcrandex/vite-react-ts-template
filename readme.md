@@ -1,5 +1,7 @@
 # Vite React Template
 
+> 兼容性:完全放弃 IE
+
 ## tailwind
 
 [Install Tailwind CSS with Vue 3 and Vite](https://tailwindcss.com/docs/guides/vue-3-vite)
