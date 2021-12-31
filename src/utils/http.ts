@@ -30,7 +30,7 @@ const axiosInstance = axios.create({
 axiosInstance.interceptors.request.use((config) => {
   const token = window.localStorage.getItem('token')
   config.headers = Object.assign({}, config.headers)
-  config.headers['Authorization'] = `Bearer ${token}`
+  token && (config.headers['Authorization'] = `Bearer ${token}`)
   config.url = withProxy(config.url)
 
   return config

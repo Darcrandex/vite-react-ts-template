@@ -14,15 +14,10 @@
 
 可以与 antd 同时使用, 并实现按需加载.
 
-## mobx
-
-```bash
-yarn add mobx mobx-react-lite
-```
-
-新建一个工具函数 `/src/utils/create-mobx-store.ts`
-在`/src/stores`文件夹中定义各个模块
-
 ## react router v6
 
 本例中, 使用 `useRoutes` 来配置路由, 并结合了权限校验和懒加载.
+
+## Recoil
+
+把 mobx 换成 Recoil

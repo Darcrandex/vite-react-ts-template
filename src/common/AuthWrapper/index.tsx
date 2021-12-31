@@ -5,20 +5,18 @@
  */
 
 import React from 'react'
-import { observer } from 'mobx-react-lite'
 import { Authorization } from '@/enums'
-import { user } from '@/stores/user'
+import { useUserInfo } from '@/stores/user'
 
 const AuthWrapper: React.FC<{ roles?: Authorization[] }> = ({ children, roles }) => {
-  if (!user.checkRoles(roles)) {
+  const { login, checkRoles } = useUserInfo()
+
+  if (!checkRoles(roles)) {
     return (
-      <div className='m-4'>
-        <p>You are not logged in.</p>
-        <button
-          className='inline-block px-4 py-2 mt-2 bg-green-500 rounded-md text-white hover:bg-green-400 transition-all'
-          onClick={user.login}
-        >
-          login
+      <div className='m-4 text-center'>
+        <p className='mb-4 text-2xl text-gray-600'>You are not logged in.</p>
+        <button className='ml-auto px-4 py-2 rounded bg-violet-600 text-white' onClick={login}>
+          Sign In Now
         </button>
       </div>
     )
@@ -27,4 +25,4 @@ const AuthWrapper: React.FC<{ roles?: Authorization[] }> = ({ children, roles })
   return <>{children}</>
 }
 
-export default observer(AuthWrapper)
+export default AuthWrapper

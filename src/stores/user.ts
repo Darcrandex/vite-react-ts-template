@@ -1,27 +1,28 @@
+import { atom, useRecoilState, useResetRecoilState } from 'recoil'
+import { v4 as uuid } from 'uuid'
 import { Authorization } from '@/enums'
-import { createStore } from '@/utils/create-mobx-store'
 
-export const user = createStore({
-  info: {
-    id: '',
-    name: '',
-    roles: [],
-  },
-
-  login() {
-    this.info.id = 'user-id'
-    this.info.name = 'Tony'
-    this.info.roles = [Authorization.Admin] as never[]
-  },
-
-  logout() {
-    this.info.id = ''
-    this.info.name = ''
-    this.info.roles = []
-  },
-
-  checkRoles(roles?: Authorization[]) {
-    if (!roles) return false
-    return this.info.roles?.some((r) => roles.includes(r))
-  },
+const userState = atom({
+  key: 'user',
+  default: { id: '', name: '', avatar: '', roles: [] },
 })
+
+export function useUserInfo() {
+  const [info, setInfo] = useRecoilState(userState)
+  const logout = useResetRecoilState(userState)
+  const login = () => {
+    setInfo({
+      id: uuid(),
+      name: 'darcrand',
+      avatar: 'https://avatars.githubusercontent.com/u/26473667?v=4',
+      roles: [Authorization.User] as never[],
+    })
+  }
+
+  const checkRoles = (arr: Authorization[] | undefined) => {
+    if (!Array.isArray(arr)) return false
+    return info.roles.some((str) => arr.includes(str))
+  }
+
+  return { info, login, logout, checkRoles }
+}

@@ -1,34 +1,23 @@
-import { runInAction } from 'mobx'
-import { createStore } from '@/utils/create-mobx-store'
+import { atom, useRecoilState } from 'recoil'
 
-function sleep(ms = 1000) {
-  return new Promise<void>((resolve) => {
+function sleep(ms = 100) {
+  return new Promise<void>((resole) => {
     const t = setTimeout(() => {
-      resolve()
       clearTimeout(t)
+      resole()
     }, ms)
   })
 }
 
-export const counter = createStore({
-  count: 0,
+const countState = atom({ key: 'count', default: 0 })
 
-  add() {
-    this.count++
-  },
+export function useCounter() {
+  const [count, setCount] = useRecoilState(countState)
+  const add = () => setCount((curr) => curr + 1)
+  const sub = async () => {
+    await sleep(1000)
+    setCount((curr) => curr - 1)
+  }
 
-  // 异步更新
-  async sub() {
-    await sleep()
-    this.count--
-  },
-
-  async subAsync() {
-    await sleep()
-
-    // 使用 runInAction 更安全
-    runInAction(() => {
-      this.count--
-    })
-  },
-})
+  return { count, add, sub }
+}

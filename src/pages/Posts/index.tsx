@@ -15,10 +15,15 @@ const Posts: React.FC = () => {
 
   return (
     <>
-      <h2 className='m-4'>Posts</h2>
+      <h2 className='m-10 mb-3 text-5xl text-center font-bold'>
+        <b className='text-gray-800'>News From</b>
+        <b className='ml-2 text-violet-600'>Cnodejs</b>
+      </h2>
+
+      <p className='text-center text-gray-400'>Using React-Query and Axios</p>
 
       <Spin spinning={isLoading}>
-        <ol>
+        <ol className='container mx-auto list-decimal pl-10'>
           {data?.data.map((v) => (
             <li key={v.id as string}>
               <CustomLink to={{ pathname: `/posts/${v.id}`, search: '?a=1&b=2' }}>{v.title as string}</CustomLink>

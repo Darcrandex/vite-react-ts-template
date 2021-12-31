@@ -39,7 +39,7 @@ const routeMap: IRoute[] = [
       {
         path: '/posts',
         component: React.lazy(() => import('./pages/Posts')),
-        roles: [Authorization.Admin],
+        roles: [Authorization.Admin, Authorization.User],
       },
     ],
   },

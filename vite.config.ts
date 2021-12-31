@@ -64,7 +64,6 @@ export default defineConfig(({ mode }) => {
           // 这里需要注意顺序,否则会报错
           manualChunks: {
             react: ['react', 'react-dom', 'react-router-dom'],
-            mobx: ['mobx', 'mobx-react-lite'],
           },
         },
       },

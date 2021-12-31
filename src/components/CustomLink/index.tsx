@@ -11,8 +11,13 @@ const CustomLink: React.FC<NavLinkProps> = (props) => {
   return (
     <NavLink
       {...props}
-      className={({ isActive }) => ['m-4 inline-block', isActive && 'text-green-500'].join(' ')}
-    ></NavLink>
+      className={({ isActive }) =>
+        [
+          'mx-2 p-2 inline-block text-violet-200 text-sm hover:text-violet-400',
+          isActive ? 'text-violet-600' : 'text-violet-300',
+        ].join(' ')
+      }
+    />
   )
 }
 
