@@ -40,10 +40,10 @@ const routeMap: IRoute[] = [
         path: '/posts',
         component: React.lazy(() => import('./pages/Posts')),
         roles: [Authorization.Admin],
-        children: [{ path: ':id', component: React.lazy(() => import('./pages/PostDetail')) }],
       },
     ],
   },
+  { path: '/posts/:id', component: React.lazy(() => import('./pages/PostDetail')) },
   { path: '/about', component: React.lazy(() => import('./pages/About')) },
 ]
 

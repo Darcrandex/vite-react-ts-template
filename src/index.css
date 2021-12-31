@@ -10,3 +10,8 @@
     @apply text-xl;
   }
 }
+
+html,
+body {
+  height: auto !important;
+}
