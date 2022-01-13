@@ -35,7 +35,7 @@ const App: React.FC = () => {
       <header className='flex items-center px-4 py-2 bg-white shadow-md'>
         <img src='https://vitejs.dev/logo.svg' alt='vite' className='w-[30px]' />
         <nav className='mx-4'>
-          <CustomLink to='/posts'>Home</CustomLink>
+          <CustomLink to='/'>Home</CustomLink>
           <CustomLink to='/about'>About</CustomLink>
         </nav>
 

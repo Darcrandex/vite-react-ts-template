@@ -37,7 +37,10 @@ const routeMap: IRoute[] = [
     component: Home,
     children: [
       {
-        path: '/posts',
+        // 使用 index 来指定默认子路由
+        // 但是此时 path 属性不能使用
+        index: true,
+        // path: '/posts',
         component: React.lazy(() => import('./pages/Posts')),
         roles: [Authorization.Admin, Authorization.User],
       },
