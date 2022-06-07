@@ -1,5 +1,10 @@
 # Vite React Template
 
+> 2022-06-07 更新
+1. 使用 pnpm
+2. 升级所有的依赖包, react@18
+3. index.html 支持 使用 ejs 语法
+
 > 兼容性:完全放弃 IE
 
 ## tailwind
