@@ -2,7 +2,8 @@ import * as path from 'path'
 import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react'
 import legacy from '@vitejs/plugin-legacy'
-import styleImport from 'vite-plugin-style-import'
+import { createStyleImportPlugin, AntdResolve } from 'vite-plugin-style-import'
+import { createHtmlPlugin } from 'vite-plugin-html'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
@@ -12,18 +13,8 @@ export default defineConfig(({ mode }) => {
     plugins: [
       react(),
       legacy(),
-      styleImport({
-        libs: [
-          {
-            // antd(组件)样式按需加载
-            libraryName: 'antd',
-            esModule: true,
-            resolveStyle: (name) => {
-              return `antd/es/${name}/style/index`
-            },
-          },
-        ],
-      }),
+      createStyleImportPlugin({ resolves: [AntdResolve()] }),
+      createHtmlPlugin({ inject: { data: { BUILD_DATE: new Date().toLocaleString() } } }),
     ],
 
     css: {

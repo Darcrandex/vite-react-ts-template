@@ -7,7 +7,7 @@ const userState = atom({
   default: { id: '', name: '', avatar: '', roles: [] },
 })
 
-export function useUserInfo() {
+export function useUser() {
   const [info, setInfo] = useRecoilState(userState)
   const logout = useResetRecoilState(userState)
   const login = () => {

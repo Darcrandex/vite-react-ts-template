@@ -7,11 +7,11 @@
 import React from 'react'
 import { useRoutes } from 'react-router-dom'
 import routes from '@/routes'
-import { useUserInfo } from './stores/user'
+import { useUser } from './stores/user'
 import CustomLink from './components/CustomLink'
 
 const UserInfo = () => {
-  const { info, login } = useUserInfo()
+  const { info, login } = useUser()
   return (
     <>
       {info.id ? (
@@ -21,7 +21,7 @@ const UserInfo = () => {
         </div>
       ) : (
         <button className='ml-auto px-4 py-2 rounded bg-violet-600 text-white' onClick={login}>
-          Sign In
+          Login
         </button>
       )}
     </>

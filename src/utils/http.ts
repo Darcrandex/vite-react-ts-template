@@ -1,5 +1,7 @@
 import axios from 'axios'
 
+console.log(axios.VERSION)
+
 const isDev = import.meta.env.DEV
 const devProxyPrefix = import.meta.env['VITE_APP_PROXY_PREFIX']
 const VITE_APP_CUSTOM_PROXY_PATTEN: string = import.meta.env['VITE_APP_CUSTOM_PROXY_PATTEN'] as string
