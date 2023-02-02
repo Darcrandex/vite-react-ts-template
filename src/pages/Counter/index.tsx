@@ -9,7 +9,7 @@ import React from 'react'
 const Counter: React.FC = () => {
   return (
     <>
-      <h1>Counter</h1>
+      <h1 className='m-8 font-bold'>Counter</h1>
     </>
   )
 }

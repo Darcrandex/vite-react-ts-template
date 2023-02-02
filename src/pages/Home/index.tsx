@@ -10,9 +10,11 @@ import { Link } from 'react-router-dom'
 const Home: React.FC = () => {
   return (
     <>
-      <h1>Home</h1>
+      <h1 className='mx-8 text-blue-500 font-bold text-3xl'>Home</h1>
 
-      <Link to='/counter'>Goto Counter Page.</Link>
+      <Link to='/counter' className='m-4 underline'>
+        Goto Counter Page.
+      </Link>
     </>
   )
 }
