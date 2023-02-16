@@ -4,18 +4,20 @@
  * @description
  */
 
-import React from 'react'
+import { useEffect } from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { routes } from './routes'
 
 const router = createBrowserRouter(routes)
 
-const App: React.FC = () => {
+export default function App() {
+  useEffect(() => {
+    console.log('app mount')
+  }, [])
+
   return (
     <>
       <RouterProvider router={router} />
     </>
   )
 }
-
-export default App

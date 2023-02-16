@@ -1,13 +1,12 @@
 /**
  * @name Home
- * @author darcrand
  * @description
+ * @author darcrand
  */
 
-import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 
-const Home: React.FC = () => {
+export default function Home() {
   return (
     <>
       <h1 className='mx-8 text-blue-500 font-bold text-3xl'>Home</h1>
@@ -15,8 +14,11 @@ const Home: React.FC = () => {
       <Link to='/counter' className='m-4 underline'>
         Goto Counter Page.
       </Link>
+      <Link to='/topics' className='m-4 underline'>
+        Goto Topics
+      </Link>
+
+      <Outlet />
     </>
   )
 }
-
-export default Home
