@@ -4,19 +4,21 @@
  * @author darcrand
  */
 
+import { apiTopic } from '@/services/topic'
 import { useQuery } from '@tanstack/react-query'
-import { http } from '@/utils/http'
 
 export default function Topics() {
-  const { data } = useQuery(['topics'], () => http.get('https://cnodejs.org/api/v1/topics?limit=2'))
+  const { data: res } = useQuery(['topics'], apiTopic.pages)
 
   return (
     <>
-      <h1>Topics</h1>
-
-      <section>
-        <p className='p-4 break-words'>{JSON.stringify(data || '{}')}</p>
-      </section>
+      <ol className='w-96 pl-6 max-w-full mx-auto mt-12 list-decimal'>
+        {res?.data.data.map((v) => (
+          <li key={v.id} className='mb-4 last:mb-0 text-gray-700'>
+            {v.title}
+          </li>
+        ))}
+      </ol>
     </>
   )
 }

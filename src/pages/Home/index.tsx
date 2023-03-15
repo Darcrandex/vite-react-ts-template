@@ -4,19 +4,30 @@
  * @author darcrand
  */
 
-import { Link, Outlet } from 'react-router-dom'
+import clsx from 'clsx'
+import { NavLink, Outlet } from 'react-router-dom'
+
+const menus = [
+  { to: '/counter', title: 'Counter' },
+  { to: '/topics', title: 'Topics' },
+]
 
 export default function Home() {
   return (
     <>
-      <h1 className='mx-8 text-blue-500 font-bold text-3xl'>Home</h1>
+      <h1 className='my-8 text-blue-400 font-extrabold text-4xl text-center'>React Typescript</h1>
 
-      <Link to='/counter' className='m-4 underline'>
-        Goto Counter Page.
-      </Link>
-      <Link to='/topics' className='m-4 underline'>
-        Goto Topics
-      </Link>
+      <nav className='text-center divide-x'>
+        {menus.map((v) => (
+          <NavLink
+            key={v.to}
+            to={v.to}
+            className={({ isActive }) => clsx('px-6 text-blue-400 text-lg', isActive && 'underline')}
+          >
+            {v.title}
+          </NavLink>
+        ))}
+      </nav>
 
       <Outlet />
     </>
