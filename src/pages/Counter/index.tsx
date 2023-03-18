@@ -1,30 +1,34 @@
 /**
  * @name Counter
- * @author darcrand
  * @description
+ * @author darcrand
  */
 
 import { useCounter } from '@/sotres/counter'
-import { Button, Space } from 'antd'
+import { Button } from 'antd'
 
 export default function Counter() {
-  const { count, add, sub, loading } = useCounter()
-
   return (
     <>
-      <section className='text-center my-6'>
-        <p className='mb-4 flex justify-center font-bold text-gray-700'>
-          <span>count</span>
-          <span className='w-10 text-right'>{count}</span>
-        </p>
+      <h1>Counter</h1>
+      <CounterItem id='001' />
+      <CounterItem id='002' />
+    </>
+  )
+}
 
-        <Space>
-          <Button onClick={add}>Add</Button>
-          <Button loading={loading} onClick={sub}>
-            Sub
-          </Button>
-        </Space>
-      </section>
+function CounterItem(props: { id: string }) {
+  const { count, inc, decSync, isLoading } = useCounter(props.id)
+  return (
+    <>
+      <h2>Counter {props.id}</h2>
+      <p>count = {count}</p>
+      <p>
+        <Button onClick={inc}>Inc</Button>
+        <Button loading={isLoading} onClick={decSync}>
+          Dec
+        </Button>
+      </p>
     </>
   )
 }

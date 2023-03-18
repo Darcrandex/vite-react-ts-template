@@ -1,21 +1,20 @@
 import { sleep } from '@/utils'
-import { useCallback, useState } from 'react'
-import { atom, useRecoilState } from 'recoil'
+import { useBoolean } from 'ahooks'
+import { atom, PrimitiveAtom, useAtom } from 'jotai'
+import { atomFamily } from 'jotai/utils'
 
-const stateAtom = atom({ key: 'counter', default: { count: 0 } })
+const couter = atomFamily<string, PrimitiveAtom<number>>(() => atom(0))
 
-export function useCounter() {
-  const [state, setState] = useRecoilState(stateAtom)
-  const [loading, setLoading] = useState(false)
+export function useCounter(id = '') {
+  const [count, setCount] = useAtom(couter(id))
+  const [isLoading, { toggle }] = useBoolean()
+  const inc = () => setCount((c) => c + 1)
+  const decSync = async () => {
+    toggle()
+    await sleep(1000)
+    setCount((c) => c - 1)
+    toggle()
+  }
 
-  const add = useCallback(() => setState((prev) => ({ ...prev, count: prev.count + 1 })), [setState])
-  const sub = useCallback(() => {
-    setLoading(true)
-    sleep(1000).then(() => {
-      setState((prev) => ({ ...prev, count: prev.count - 1 }))
-      setLoading(false)
-    })
-  }, [setState])
-
-  return { count: state.count, add, sub, loading }
+  return { count, inc, decSync, isLoading }
 }

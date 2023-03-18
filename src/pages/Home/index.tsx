@@ -8,28 +8,35 @@ import clsx from 'clsx'
 import { NavLink, Outlet } from 'react-router-dom'
 
 const menus = [
-  { to: '/counter', title: 'Counter' },
+  { to: '/about', title: 'About' },
   { to: '/topics', title: 'Topics' },
+  { to: '/antd', title: 'AntdUI' },
+  { to: '/tailwind', title: 'Tailwind' },
+  { to: '/counter', title: 'Counter' },
 ]
 
 export default function Home() {
   return (
     <>
-      <h1 className='my-8 text-blue-400 font-extrabold text-4xl text-center'>React Typescript</h1>
+      <section className='flex'>
+        <main className='flex-1'>
+          <Outlet />
+        </main>
 
-      <nav className='text-center divide-x'>
-        {menus.map((v) => (
-          <NavLink
-            key={v.to}
-            to={v.to}
-            className={({ isActive }) => clsx('px-6 text-blue-400 text-lg', isActive && 'underline')}
-          >
-            {v.title}
-          </NavLink>
-        ))}
-      </nav>
-
-      <Outlet />
+        <aside className='w-96'>
+          <nav>
+            {menus.map((v) => (
+              <NavLink
+                key={v.to}
+                to={v.to}
+                className={({ isActive }) => clsx('block px-6 text-blue-400 text-lg', isActive && 'underline')}
+              >
+                {v.title}
+              </NavLink>
+            ))}
+          </nav>
+        </aside>
+      </section>
     </>
   )
 }

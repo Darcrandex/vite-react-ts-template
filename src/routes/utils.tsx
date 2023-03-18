@@ -1,3 +1,4 @@
+import { LoadingOutlined } from '@ant-design/icons'
 import React, { Suspense } from 'react'
 
 /**
@@ -6,7 +7,13 @@ import React, { Suspense } from 'react'
  */
 export function withSuspense(Component: React.LazyExoticComponent<React.FunctionComponent>) {
   const LazyComponent = () => (
-    <Suspense fallback='global loading...'>
+    <Suspense
+      fallback={
+        <section className='py-20 text-center text-3xl text-emerald-600'>
+          <LoadingOutlined />
+        </section>
+      }
+    >
       <Component />
     </Suspense>
   )
