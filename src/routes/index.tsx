@@ -4,10 +4,10 @@ import { withSuspense } from './utils'
 
 const Home = withSuspense(React.lazy(() => import('@/pages/Home')))
 const Topics = withSuspense(React.lazy(() => import('@/pages/Topics')))
-const Counter = withSuspense(React.lazy(() => import('@/pages/Counter')))
 const AntdUI = withSuspense(React.lazy(() => import('@/pages/AntdUI')))
 const Tailwind = withSuspense(React.lazy(() => import('@/pages/Tailwind')))
 const About = withSuspense(React.lazy(() => import('@/pages/About')))
+const StateManager = withSuspense(React.lazy(() => import('@/pages/StateManager')))
 
 export const routes: RouteObject[] = [
   {
@@ -19,7 +19,7 @@ export const routes: RouteObject[] = [
       { path: 'antd', element: <AntdUI /> },
       { path: 'tailwind', element: <Tailwind /> },
       { path: 'about', element: <About /> },
-      { path: 'counter', element: <Counter /> },
+      { path: 'state', element: <StateManager /> },
     ],
   },
 ]

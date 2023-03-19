@@ -12,7 +12,7 @@ const client = new QueryClient({ defaultOptions: { queries: { refetchOnWindowFoc
 ReactDOM.createRoot(root).render(
   <>
     <QueryClientProvider client={client}>
-      <ConfigProvider>
+      <ConfigProvider theme={{ token: { colorPrimary: '#10b981' } }}>
         <StyleProvider hashPriority='high'>
           <App />
         </StyleProvider>
