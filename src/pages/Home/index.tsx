@@ -6,8 +6,8 @@
 
 import { useSize } from 'ahooks'
 import clsx from 'clsx'
-import { useMemo, useRef } from 'react'
-import { NavLink, Outlet, useLocation } from 'react-router-dom'
+import { PropsWithChildren, useMemo, useRef } from 'react'
+import { Outlet, useLocation, useNavigate } from 'react-router-dom'
 
 const menus = [
   { to: '/about', title: 'About' },
@@ -15,6 +15,7 @@ const menus = [
   { to: '/antd', title: 'AntdUI' },
   { to: '/tailwind', title: 'Tailwind' },
   { to: '/state', title: 'State' },
+  { to: '/fetching', title: 'Fetching' },
 ]
 
 export default function Home() {
@@ -25,7 +26,7 @@ export default function Home() {
   const cursorStyle = useMemo(() => {
     const height = navSize ? navSize.height / menus.length : 0
     const menuIndex = menus.findIndex((v) => v.to === location.pathname)
-    return { height: height, transform: `translate( 50% ,${100 * menuIndex}%)` }
+    return { height, transform: `translate(50%,${100 * menuIndex}%)` }
   }, [navSize, location.pathname])
 
   return (
@@ -40,18 +41,9 @@ export default function Home() {
         <aside className='w-32 mr-4'>
           <nav ref={refNav} className='relative text-right border-r border-gray-500/50'>
             {menus.map((v) => (
-              <NavLink
-                key={v.to}
-                to={v.to}
-                className={({ isActive }) =>
-                  clsx(
-                    'block mr-4 py-2 transition-all duration-500 text-lg',
-                    isActive ? 'opacity-100' : 'opacity-25 hover:opacity-75'
-                  )
-                }
-              >
+              <LinkItem key={v.to} to={v.to}>
                 {v.title}
-              </NavLink>
+              </LinkItem>
             ))}
 
             <i
@@ -66,5 +58,23 @@ export default function Home() {
         </main>
       </section>
     </>
+  )
+}
+
+function LinkItem(props: PropsWithChildren<{ to: string }>) {
+  const navigate = useNavigate()
+  const location = useLocation()
+  const isActive = location.pathname === props.to
+
+  return (
+    <span
+      className={clsx(
+        'block mr-4 py-2 transition-all duration-500 text-lg cursor-pointer',
+        isActive ? 'opacity-100' : 'opacity-25 hover:opacity-75'
+      )}
+      onClick={() => navigate(props.to)}
+    >
+      {props.children}
+    </span>
   )
 }

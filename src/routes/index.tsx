@@ -8,6 +8,7 @@ const AntdUI = withSuspense(React.lazy(() => import('@/pages/AntdUI')))
 const Tailwind = withSuspense(React.lazy(() => import('@/pages/Tailwind')))
 const About = withSuspense(React.lazy(() => import('@/pages/About')))
 const StateManager = withSuspense(React.lazy(() => import('@/pages/StateManager')))
+const Fetching = withSuspense(React.lazy(() => import('@/pages/Fetching')))
 
 export const routes: RouteObject[] = [
   {
@@ -20,6 +21,7 @@ export const routes: RouteObject[] = [
       { path: 'tailwind', element: <Tailwind /> },
       { path: 'about', element: <About /> },
       { path: 'state', element: <StateManager /> },
+      { path: 'fetching', element: <Fetching /> },
     ],
   },
 ]
