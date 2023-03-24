@@ -12,9 +12,9 @@ export default function Topics() {
 
   return (
     <>
-      <ol className='w-96 pl-6 max-w-full mx-auto mt-12 list-decimal'>
-        {res?.data.data.map((v) => (
-          <li key={v.id} className='mb-4 last:mb-0 text-gray-700'>
+      <ol className='mx-10 pl-6 max-w-full list-decimal'>
+        {res?.data.slice(0, 10).map((v) => (
+          <li key={v.id} className='mb-4 last:mb-0 text-gray-100'>
             {v.title}
           </li>
         ))}

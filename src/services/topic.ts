@@ -6,5 +6,5 @@ export type TopicListItem = {
 }
 
 export const apiTopic = {
-  pages: () => http.get<{ data: TopicListItem[] }>('https://cnodejs.org/api/v1/topics?limit=10'),
+  pages: () => http.get<TopicListItem[]>('https://jsonplaceholder.typicode.com/posts'),
 }
