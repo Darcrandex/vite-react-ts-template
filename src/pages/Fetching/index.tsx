@@ -8,12 +8,14 @@ import { apiTopic } from '@/services/topic'
 import { useQuery } from '@tanstack/react-query'
 
 function Topics() {
-  const { data: res } = useQuery(['topics'], apiTopic.pages)
+  const { data: res, isLoading } = useQuery(['topics'], apiTopic.pages)
 
   return (
     <>
+      {isLoading && <p className='text-center text-white'>Loading...</p>}
+
       <ol className='pl-6 max-w-full mx-auto mt-12 list-decimal'>
-        {res?.data.data.map((v) => (
+        {res?.data?.slice(0, 10).map((v) => (
           <li key={v.id} className='mb-4 last:mb-0 text-white'>
             {v.title}
           </li>

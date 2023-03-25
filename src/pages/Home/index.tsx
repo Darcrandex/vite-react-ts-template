@@ -11,7 +11,6 @@ import { Outlet, useLocation, useNavigate } from 'react-router-dom'
 
 const menus = [
   { to: '/about', title: 'About' },
-  { to: '/topics', title: 'Topics' },
   { to: '/antd', title: 'AntdUI' },
   { to: '/tailwind', title: 'Tailwind' },
   { to: '/state', title: 'State' },
