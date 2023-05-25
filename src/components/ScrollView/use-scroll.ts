@@ -2,7 +2,7 @@ import { useDebounceFn } from 'ahooks'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import Scrollbar from 'smooth-scrollbar'
 
-export function useScroll() {
+export function useScroll(options?: { trackHideDelay?: number }) {
   const [isScrolling, setScrolling] = useState(false)
   const elRef = useRef<HTMLElement>(null)
   const sbRef = useRef<Scrollbar | null>(null)
@@ -11,7 +11,7 @@ export function useScroll() {
     setScrolling(true)
   }, [])
 
-  const { run: onScrollEnd } = useDebounceFn(() => setScrolling(false), { wait: 2000 })
+  const { run: onScrollEnd } = useDebounceFn(() => setScrolling(false), { wait: options?.trackHideDelay || 1000 })
 
   useEffect(() => {
     if (elRef.current && !sbRef.current) {
