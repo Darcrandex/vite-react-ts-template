@@ -4,9 +4,11 @@
  * @author darcrand
  */
 
-import { useEffect, useRef } from 'react'
-import Scrollbar from 'smooth-scrollbar'
+import clsx from 'clsx'
+import { useEffect } from 'react'
 
+import './app.css'
+import { useScroll } from './hooks/use-scroll'
 import Antd from './pages/Antd'
 import Fetching from './pages/Fetching'
 import Heading from './pages/Heading'
@@ -19,19 +21,11 @@ export default function App() {
     console.log('app mounted')
   }, [])
 
-  const elRef = useRef<HTMLElement>(null)
-  useEffect(() => {
-    if (elRef.current) {
-      const sb = Scrollbar.init(elRef.current)
-      return () => {
-        sb.destroy()
-      }
-    }
-  }, [])
+  const { elRef, isScrolling } = useScroll()
 
   return (
     <>
-      <section ref={elRef} className='h-screen overflow-auto'>
+      <section ref={elRef} className={clsx('h-screen', isScrolling ? '' : 'scrollbar_scroll--end')}>
         <Heading />
         <Routing />
         <Antd />

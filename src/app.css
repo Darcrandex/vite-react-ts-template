@@ -1,0 +1,3 @@
+.scrollbar_scroll--end .scrollbar-track.show {
+  opacity: 0 !important;
+}
