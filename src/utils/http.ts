@@ -15,6 +15,20 @@ http.interceptors.request.use((config) => {
 
 http.interceptors.response.use(
   (res) => {
+    // 这里的数据返回处理就要根据业务而定了
+    // 默认的 res 是被 axios 包装过的，所以会有 config 等字段
+    // 而 res.data 才是接口真正返回的内容
+
+    // 如何定义接口返回的数据类型（typescript）
+
+    // 1. 如果你直接返回 res
+    // const api01 = async ()=> http.get<ResponseData>('url')
+    // const data = (await api01()).data
+
+    // 2. 如果舍弃 axios 包装，直接返回 res.data
+    // const api02 = async ():Promise<ResponseData> => http.get('url')
+    // const data = await api02()
+
     return res
   },
   (err) => {
@@ -27,5 +41,5 @@ http.interceptors.response.use(
     }
 
     return Promise.reject(err)
-  }
+  },
 )

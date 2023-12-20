@@ -18,5 +18,5 @@ ReactDOM.createRoot(root).render(
         </StyleProvider>
       </ConfigProvider>
     </QueryClientProvider>
-  </>
+  </>,
 )

@@ -24,6 +24,8 @@ export default function AntdUI() {
         可能不是最好的，但可以说是最稳的。
       </p>
 
+      <p className='mt-4'>最大问题是打包会很大，大得离谱。。。</p>
+
       <section className='mt-10'>
         <Space>
           <Button type='primary' icon={<FacebookFilled />}>

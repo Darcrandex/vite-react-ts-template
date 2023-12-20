@@ -69,7 +69,7 @@ function LinkItem(props: PropsWithChildren<{ to: string }>) {
     <span
       className={clsx(
         'block mr-4 py-2 transition-all duration-500 text-lg cursor-pointer',
-        isActive ? 'opacity-100' : 'opacity-25 hover:opacity-75'
+        isActive ? 'opacity-100' : 'opacity-25 hover:opacity-75',
       )}
       onClick={() => navigate(props.to)}
     >

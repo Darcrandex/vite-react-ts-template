@@ -8,7 +8,10 @@ import { apiTopic } from '@/services/topic'
 import { useQuery } from '@tanstack/react-query'
 
 function Topics() {
-  const { data: res, isLoading } = useQuery(['topics'], apiTopic.pages)
+  const { data: res, isLoading } = useQuery({
+    queryKey: ['topics'],
+    queryFn: () => apiTopic.pages(),
+  })
 
   return (
     <>
