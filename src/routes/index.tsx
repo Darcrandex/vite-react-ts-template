@@ -1,13 +1,13 @@
-import React from 'react'
+import { lazy } from 'react'
 import { Navigate, RouteObject } from 'react-router-dom'
 import { withSuspense } from './utils'
 
-const Home = withSuspense(React.lazy(() => import('@/pages/Home')))
-const AntdUI = withSuspense(React.lazy(() => import('@/pages/AntdUI')))
-const Tailwind = withSuspense(React.lazy(() => import('@/pages/Tailwind')))
-const About = withSuspense(React.lazy(() => import('@/pages/About')))
-const StateManager = withSuspense(React.lazy(() => import('@/pages/StateManager')))
-const Fetching = withSuspense(React.lazy(() => import('@/pages/Fetching')))
+const Home = withSuspense(lazy(() => import('@/pages/Home')))
+const AntdUI = withSuspense(lazy(() => import('@/pages/AntdUI')))
+const Tailwind = withSuspense(lazy(() => import('@/pages/Tailwind')))
+const About = withSuspense(lazy(() => import('@/pages/About')))
+const StateManager = withSuspense(lazy(() => import('@/pages/StateManager')))
+const Fetching = withSuspense(lazy(() => import('@/pages/Fetching')))
 
 export const routes: RouteObject[] = [
   {
