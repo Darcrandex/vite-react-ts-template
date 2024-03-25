@@ -21,8 +21,3 @@
     @apply relative m-4 pl-4 border-l-2;
   }
 }
-
-html,
-body {
-  @apply h-full bg-zinc-800/80 text-white;
-}

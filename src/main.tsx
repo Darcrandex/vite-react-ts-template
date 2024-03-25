@@ -7,7 +7,9 @@ import App from './App'
 import './index.css'
 
 const root = document.getElementById('root') || document.body
-const client = new QueryClient({ defaultOptions: { queries: { refetchOnWindowFocus: false } } })
+const client = new QueryClient({
+  defaultOptions: { queries: { refetchOnWindowFocus: false, gcTime: 5 * 60 * 1000, staleTime: 1 * 60 * 1000 } },
+})
 
 ReactDOM.createRoot(root).render(
   <>

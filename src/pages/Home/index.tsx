@@ -4,8 +4,8 @@
  * @author darcrand
  */
 
+import { cls } from '@/utils/cls'
 import { useSize } from 'ahooks'
-import clsx from 'clsx'
 import { PropsWithChildren, useMemo, useRef } from 'react'
 import { Outlet, useLocation, useNavigate } from 'react-router-dom'
 
@@ -30,31 +30,33 @@ export default function Home() {
 
   return (
     <>
-      <header>
-        <h1 className='py-20 text-center text-4xl font-extrabold italic'>
-          Vite React <span className='text-emerald-500'>Type</span>script Template.
-        </h1>
-      </header>
+      <section className='flex flex-col h-screen bg-zinc-700 text-white'>
+        <header>
+          <h1 className='py-20 text-center text-4xl font-extrabold italic'>
+            Vite React <span className='text-emerald-500'>Type</span>script Template.
+          </h1>
+        </header>
 
-      <section className='flex justify-center'>
-        <aside className='w-32 mr-4'>
-          <nav ref={refNav} className='relative text-right border-r border-gray-500/50'>
-            {menus.map((v) => (
-              <LinkItem key={v.to} to={v.to}>
-                {v.title}
-              </LinkItem>
-            ))}
+        <section className='flex-1 flex justify-center overflow-auto'>
+          <aside className='w-32 mr-4'>
+            <nav ref={refNav} className='relative text-right border-r border-gray-500/50'>
+              {menus.map((v) => (
+                <LinkItem key={v.to} to={v.to}>
+                  {v.title}
+                </LinkItem>
+              ))}
 
-            <i
-              className='absolute top-0 right-0 w-[2px] bg-emerald-500 transition-all duration-300'
-              style={cursorStyle}
-            ></i>
-          </nav>
-        </aside>
+              <i
+                className='absolute top-0 right-0 w-[2px] bg-emerald-500 transition-all duration-300'
+                style={cursorStyle}
+              ></i>
+            </nav>
+          </aside>
 
-        <main className='w-1/2'>
-          <Outlet />
-        </main>
+          <main className='w-1/2 overflow-auto'>
+            <Outlet />
+          </main>
+        </section>
       </section>
     </>
   )
@@ -67,7 +69,7 @@ function LinkItem(props: PropsWithChildren<{ to: string }>) {
 
   return (
     <span
-      className={clsx(
+      className={cls(
         'block mr-4 py-2 transition-all duration-500 text-lg cursor-pointer',
         isActive ? 'opacity-100' : 'opacity-25 hover:opacity-75',
       )}

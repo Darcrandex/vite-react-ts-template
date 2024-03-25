@@ -40,7 +40,7 @@ export default function StateManager() {
           <a className='link' target='_blank' href='https://react.dev/reference/react/useContext' rel='noreferrer'>
             useContext
           </a>
-          无效套娃很烦
+          无限套娃很烦
         </li>
       </ol>
 
