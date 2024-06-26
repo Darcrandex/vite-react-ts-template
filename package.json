@@ -13,9 +13,9 @@
   "dependencies": {
     "@ant-design/cssinjs": "^1.18.5",
     "@ant-design/icons": "^5.3.5",
-    "@tanstack/react-query": "^5.28.8",
-    "ahooks": "^3.7.10",
-    "antd": "^5.15.4",
+    "@tanstack/react-query": "^5.48.0",
+    "ahooks": "^3.8.0",
+    "antd": "^5.18.3",
     "axios": "^1.6.8",
     "jotai": "^2.7.1",
     "qs": "^6.12.0",
@@ -40,7 +40,7 @@
     "prettier": "^3.2.5",
     "tailwind-merge": "^2.2.2",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5.4.3",
-    "vite": "^5.2.6"
+    "typescript": "^5.5.2",
+    "vite": "^5.3.1"
   }
 }

@@ -1,6 +1,6 @@
+import { withSuspense } from '@/utils/withSuspense'
 import { lazy } from 'react'
 import { Navigate, RouteObject } from 'react-router-dom'
-import { withSuspense } from './utils'
 
 const Home = withSuspense(lazy(() => import('@/pages/Home')))
 const AntdUI = withSuspense(lazy(() => import('@/pages/AntdUI')))

@@ -2,11 +2,11 @@
 
 一个轻量型的 react 项目模版。可以满足基本的业务需求。
 
-其中包括但不限于以下内容：
-
-1. 路由功能
-2. 样式管理
-3. 数据请求
-4. 全局数据状态
-5. UI组件
-6. lint
+- [vitejs](https://vitejs.dev/)
+- [react router](https://reactrouter.com/en/main)
+- [tailwindcss](https://tailwindcss.com/docs/installation) + [less](https://lesscss.org/)
+- [react-query](https://tanstack.com/query/latest/docs/framework/react/overview) + [axios](https://github.com/axios/axios)
+- [jotai](https://jotai.org/)
+- [antd@5](https://ant-design.antgroup.com/index-cn)
+- eslint@8 + prettier
+- typescript
