@@ -15,6 +15,10 @@
 
 ## 额外说明
 
+### pnpm
+
+推荐使用 [pnpm](https://pnpm.io/)，有关 pnpm 导致的问题，已在 `.npmrc` 中解决。
+
 ### eslint 版本问题
 
 目前 vite@5 默认使用 eslint@8；但 eslint 最新版本是 v9，与 vite 的配置不契合，因此先不要升级 eslint
