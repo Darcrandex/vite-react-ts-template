@@ -30,6 +30,8 @@ http.interceptors.response.use(
     // const api02 = async ():Promise<ResponseData> => http.get('url')
     // const data = await api02()
 
+    // typeof data => ResponseData
+
     return res
   },
   (err) => {

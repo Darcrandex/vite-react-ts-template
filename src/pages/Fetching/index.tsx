@@ -4,13 +4,13 @@
  * @author darcrand
  */
 
-import { apiTopic } from '@/services/topic'
+import { topicService } from '@/services/topic'
 import { useQuery } from '@tanstack/react-query'
 
 function Topics() {
   const { data: res, isLoading } = useQuery({
     queryKey: ['topics'],
-    queryFn: () => apiTopic.pages(),
+    queryFn: () => topicService.pages(),
   })
 
   return (
