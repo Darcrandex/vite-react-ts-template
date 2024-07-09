@@ -3,12 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  /* 修复 antd-icons 位置偏移的问题 */
-  svg {
-    display: inline;
-    vertical-align: baseline;
-  }
-
   code {
     @apply inline-block mx-1 text-pink-400;
   }
