@@ -30,16 +30,16 @@ export default function Home() {
 
   return (
     <>
-      <section className='flex flex-col h-screen bg-zinc-700 text-white'>
+      <section className='flex h-screen flex-col bg-zinc-700 text-white'>
         <header>
           <h1 className='py-20 text-center text-4xl font-extrabold italic'>
             Vite React <span className='text-emerald-500'>Type</span>script Template.
           </h1>
         </header>
 
-        <section className='flex-1 flex justify-center overflow-auto'>
-          <aside className='w-32 mr-4'>
-            <nav ref={refNav} className='relative text-right border-r border-gray-500/50'>
+        <section className='flex flex-1 justify-center overflow-auto'>
+          <aside className='mr-4 w-32'>
+            <nav ref={refNav} className='relative border-r border-gray-500/50 text-right'>
               {menus.map((v) => (
                 <LinkItem key={v.to} to={v.to}>
                   {v.title}
@@ -47,7 +47,7 @@ export default function Home() {
               ))}
 
               <i
-                className='absolute top-0 right-0 w-[2px] bg-emerald-500 transition-all duration-300'
+                className='absolute right-0 top-0 w-[2px] bg-emerald-500 transition-all duration-300'
                 style={cursorStyle}
               ></i>
             </nav>
@@ -70,7 +70,7 @@ function LinkItem(props: PropsWithChildren<{ to: string }>) {
   return (
     <span
       className={cls(
-        'block mr-4 py-2 transition-all duration-500 text-lg cursor-pointer',
+        'mr-4 block cursor-pointer py-2 text-lg transition-all duration-500',
         isActive ? 'opacity-100' : 'opacity-25 hover:opacity-75',
       )}
       onClick={() => navigate(props.to)}

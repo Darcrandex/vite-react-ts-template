@@ -23,7 +23,7 @@ export default function StateManager() {
         可以满足我的要求，选择它的原因有三个：“简单”，“简单”，“还™是简单”。就像写<code>useState</code>一样简单。
       </p>
 
-      <ol className='mt-10 pl-8 list-decimal'>
+      <ol className='mt-10 list-decimal pl-8'>
         <li>
           <a className='link' href='https://mobx.js.org/README.html' target='_blank' rel='noreferrer'>
             Mobx
@@ -62,7 +62,7 @@ function Counter(props: { id: string }) {
   const { count, inc, decSync, isLoading } = useCounter(props.id)
   return (
     <>
-      <h2 className='font-bold text-lg'>Counter (id = {props.id})</h2>
+      <h2 className='text-lg font-bold'>Counter (id = {props.id})</h2>
       <p className='my-4 text-lg'>count = {count}</p>
       <Button.Group>
         <Button onClick={inc}>Inc</Button>

@@ -17,9 +17,9 @@ function Topics() {
     <>
       {isLoading && <p className='text-center text-white'>Loading...</p>}
 
-      <ol className='pl-6 max-w-full mx-auto mt-12 list-decimal'>
+      <ol className='mx-auto mt-12 max-w-full list-decimal pl-6'>
         {res?.data?.slice(0, 10).map((v) => (
-          <li key={v.id} className='mb-4 last:mb-0 text-white'>
+          <li key={v.id} className='mb-4 text-white last:mb-0'>
             {v.title}
           </li>
         ))}
