@@ -74,3 +74,7 @@
   "editor.fontLigatures": true
 }
 ```
+
+使用 [inspector](https://react-dev-inspector.zthxxx.me/docs/inspector-component)。inspector 可以在开发模式下快速定位页面元素对应的代码段，方便 debug。
+
+快捷键 `Ctrl + Shift + Command + C` `Ctrl + Shift + Alt + C`

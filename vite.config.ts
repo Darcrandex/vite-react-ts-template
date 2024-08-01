@@ -1,3 +1,4 @@
+import { inspectorServer } from '@react-dev-inspector/vite-plugin'
 import legacy from '@vitejs/plugin-legacy'
 import react from '@vitejs/plugin-react-swc'
 import path from 'path'
@@ -7,7 +8,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, './')
 
   return {
-    plugins: [react(), legacy()],
+    plugins: [react(), legacy(), inspectorServer()],
     resolve: { alias: { '@': path.resolve(__dirname, './src'), src: path.resolve(__dirname, './src') } },
 
     server: { host: true, port: parseInt(env.VITE_APP_PORT) || 3000 },
