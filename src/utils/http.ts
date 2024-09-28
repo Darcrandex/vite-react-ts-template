@@ -3,7 +3,7 @@ import QueryString from 'qs'
 
 export const http = axios.create({
   baseURL: import.meta.env.VITE_BASE_URL,
-  timeout: 1000 * 60,
+  timeout: 1000 * 5,
   paramsSerializer: { serialize: (params) => QueryString.stringify(params, { arrayFormat: 'brackets' }) },
 })
 

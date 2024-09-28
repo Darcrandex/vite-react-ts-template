@@ -33,7 +33,7 @@ export default function Home() {
       <section className='flex h-screen flex-col bg-zinc-700 text-white'>
         <header>
           <h1 className='py-20 text-center text-4xl font-extrabold italic'>
-            Vite React <span className='text-emerald-500'>Type</span>script Template.
+            Vite React <span className='text-primary'>Type</span>script Template.
           </h1>
         </header>
 
@@ -47,7 +47,7 @@ export default function Home() {
               ))}
 
               <i
-                className='absolute right-0 top-0 w-[2px] bg-emerald-500 transition-all duration-300'
+                className='absolute right-0 top-0 w-[2px] bg-primary transition-all duration-300'
                 style={cursorStyle}
               ></i>
             </nav>
