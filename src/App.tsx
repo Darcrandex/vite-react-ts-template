@@ -1,34 +1,24 @@
-/**
- * @name App
- * @author darcrand
- * @description
- */
-
-import { LoadingOutlined } from '@ant-design/icons'
-import { Suspense, useEffect } from 'react'
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { ConfigProvider } from 'antd'
+import { createBrowserRouter, RouterProvider } from 'react-router'
+import { rose } from 'tailwindcss/colors'
 import { routes } from './routes'
 
 const router = createBrowserRouter(routes)
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: { staleTime: 1000 * 60 * 5, gcTime: 1000 * 60 * 10 },
+  },
+})
 
 export default function App() {
-  useEffect(() => {
-    console.log('app mount')
-  }, [])
-
   return (
     <>
-      <Suspense
-        // 如果内部的懒加载组件没有定义 loading
-        // 则使用这个根级的 loading
-        fallback={
-          <section className='py-20 text-center text-3xl text-emerald-600'>
-            <LoadingOutlined />
-          </section>
-        }
-      >
-        <RouterProvider router={router} />
-      </Suspense>
+      <QueryClientProvider client={queryClient}>
+        <ConfigProvider theme={{ token: { colorPrimary: rose[500] } }}>
+          <RouterProvider router={router} />
+        </ConfigProvider>
+      </QueryClientProvider>
     </>
   )
 }

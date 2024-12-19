@@ -1,25 +1,21 @@
-import { withSuspense } from '@/utils/withSuspense'
-import { lazy } from 'react'
-import { Navigate, RouteObject } from 'react-router-dom'
-
-const Home = withSuspense(lazy(() => import('@/pages/Home')))
-const AntdUI = withSuspense(lazy(() => import('@/pages/AntdUI')))
-const Tailwind = withSuspense(lazy(() => import('@/pages/Tailwind')))
-const About = withSuspense(lazy(() => import('@/pages/About')))
-const StateManager = withSuspense(lazy(() => import('@/pages/StateManager')))
-const Fetching = withSuspense(lazy(() => import('@/pages/Fetching')))
+import About from '@/pages/about'
+import DataFetch from '@/pages/data-fetch'
+import Home from '@/pages/home'
+import RootLayout from '@/pages/layout'
+import Status from '@/pages/status'
+import UI from '@/pages/ui'
+import type { RouteObject } from 'react-router'
 
 export const routes: RouteObject[] = [
   {
     path: '/',
-    element: <Home />,
+    element: <RootLayout />,
     children: [
-      { index: true, element: <Navigate to='about' /> },
-      { path: 'antd', element: <AntdUI /> },
-      { path: 'tailwind', element: <Tailwind /> },
-      { path: 'about', element: <About /> },
-      { path: 'state', element: <StateManager /> },
-      { path: 'fetching', element: <Fetching /> },
+      { path: '/', element: <Home /> },
+      { path: '/data-fetch', element: <DataFetch /> },
+      { path: '/ui', element: <UI /> },
+      { path: '/status', element: <Status /> },
+      { path: '/about', element: <About /> },
     ],
   },
 ]

@@ -1,10 +1,13 @@
 import type { Config } from 'tailwindcss'
+import { rose } from 'tailwindcss/colors'
 
 export default {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  content: ['./src/**/*.{jsx,tsx}'],
   theme: {
     extend: {
-      colors: { primary: '#2edfa3' },
+      colors: {
+        primary: rose[500],
+      },
     },
   },
   plugins: [],
