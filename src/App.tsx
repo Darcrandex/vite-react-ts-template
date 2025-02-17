@@ -1,7 +1,7 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ConfigProvider } from 'antd'
 import { createBrowserRouter, RouterProvider } from 'react-router'
-import { rose } from 'tailwindcss/colors'
+import { useCSSVariable } from './hooks/useCSSVariable'
 import { routes } from './routes'
 
 const router = createBrowserRouter(routes)
@@ -12,10 +12,16 @@ const queryClient = new QueryClient({
 })
 
 export default function App() {
+  const themeColor = useCSSVariable('--color-primary')
+
   return (
     <>
       <QueryClientProvider client={queryClient}>
-        <ConfigProvider theme={{ token: { colorPrimary: rose[500] } }}>
+        <ConfigProvider
+          theme={{
+            token: themeColor ? { colorPrimary: themeColor } : undefined,
+          }}
+        >
           <RouterProvider router={router} />
         </ConfigProvider>
       </QueryClientProvider>

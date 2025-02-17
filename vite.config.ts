@@ -1,4 +1,5 @@
 import { inspectorServer } from '@react-dev-inspector/vite-plugin'
+import tailwindcss from '@tailwindcss/vite'
 import legacy from '@vitejs/plugin-legacy'
 import react from '@vitejs/plugin-react-swc'
 import path from 'node:path'
@@ -13,6 +14,7 @@ export default defineConfig(({ mode }) => {
     plugins: [
       legacy(),
       react(),
+      tailwindcss(),
       inspectorServer(),
       createHtmlPlugin({
         inject: {
