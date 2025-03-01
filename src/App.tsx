@@ -6,7 +6,7 @@ import {
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { App as AntdApp, ConfigProvider } from 'antd'
 import { createBrowserRouter, RouterProvider } from 'react-router'
-import { useCSSVariable } from './hooks/useCSSVariable'
+import { useCssValue } from './hooks/useCssValue'
 import { routes } from './routes'
 
 const router = createBrowserRouter(routes)
@@ -21,7 +21,7 @@ const queryClient = new QueryClient({
 })
 
 export default function App() {
-  const [themeColor] = useCSSVariable('--color-primary')
+  const [themeColor] = useCssValue('--color-primary')
 
   return (
     <>
