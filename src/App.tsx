@@ -1,5 +1,8 @@
 import GlobalAntdMessage from '@/components/GlobalAntdMessage'
-import { StyleProvider } from '@ant-design/cssinjs'
+import {
+  legacyLogicalPropertiesTransformer,
+  StyleProvider,
+} from '@ant-design/cssinjs'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { App as AntdApp, ConfigProvider } from 'antd'
 import { createBrowserRouter, RouterProvider } from 'react-router'
@@ -30,7 +33,10 @@ export default function App() {
               : undefined,
           }}
         >
-          <StyleProvider layer hashPriority='high'>
+          <StyleProvider
+            hashPriority='high'
+            transformers={[legacyLogicalPropertiesTransformer]}
+          >
             <AntdApp>
               <GlobalAntdMessage />
               <RouterProvider router={router} />

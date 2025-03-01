@@ -38,6 +38,12 @@ export default defineConfig(({ mode }) => {
           chunkFileNames: 'static/js/[name]-[hash].js',
           entryFileNames: 'static/js/[name]-[hash].js',
           assetFileNames: 'static/assets/[name]-[hash].[ext]',
+
+          manualChunks: {
+            react: ['react', 'react-dom', 'react-router'],
+            antd: ['antd'],
+            icons: ['@ant-design/icons'],
+          },
         },
       },
     },

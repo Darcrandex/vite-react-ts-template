@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from 'motion/react'
 import { NavLink, useLocation, useOutlet } from 'react-router'
 
 const links = [
-  { path: '/', text: 'Home' },
+  { path: '/home', text: 'Home' },
   { path: '/data-fetch', text: 'Data Fetch' },
   { path: '/ui', text: 'UI' },
   { path: '/status', text: 'Status' },
@@ -45,7 +45,7 @@ export default function RootLayout() {
                 className={({ isActive }) =>
                   cls(
                     'px-2 transition-all duration-300',
-                    isActive ? 'text-primary underline' : 'hover:text-primary',
+                    isActive ? 'text-primary !underline' : 'hover:!underline',
                   )
                 }
               >
