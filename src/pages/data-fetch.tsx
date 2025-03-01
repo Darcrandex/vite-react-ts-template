@@ -19,7 +19,7 @@ export default function DataFetch() {
       {isLoading && (
         <p className='text-center'>
           <LoadingOutlined />
-          <span>loading...</span>
+          <span className='ml-2'>loading...</span>
         </p>
       )}
 

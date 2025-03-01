@@ -31,5 +31,15 @@ export default defineConfig(({ mode }) => {
     server: {
       port: Number(env.VITE_APP_PORT || 3000),
     },
+
+    build: {
+      rollupOptions: {
+        output: {
+          chunkFileNames: 'static/js/[name]-[hash].js',
+          entryFileNames: 'static/js/[name]-[hash].js',
+          assetFileNames: 'static/assets/[name]-[hash].[ext]',
+        },
+      },
+    },
   }
 })

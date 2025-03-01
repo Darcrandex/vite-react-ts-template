@@ -2,10 +2,10 @@
 
 - vitejs
 - react-router@7
-- tailwindcss
-- antd
+- tailwindcss@4
+- antd@5
 - jotai
-- react-query
+- react-query@5
 - eslint@9
 - react-dev-inspector
 

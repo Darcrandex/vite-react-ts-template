@@ -11,5 +11,5 @@ export function useCSSVariable(varName: string) {
     setValue(style.getPropertyValue(varName).trim())
   }, [varName])
 
-  return value
+  return [value] as const
 }
