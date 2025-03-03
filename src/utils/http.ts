@@ -1,7 +1,12 @@
 import { message } from '@/components/GlobalAntdMessage'
 import axios from 'axios'
+import Qs from 'qs'
 
-export const http = axios.create()
+export const http = axios.create({
+  paramsSerializer: function (params) {
+    return Qs.stringify(params, { arrayFormat: 'brackets' })
+  },
+})
 
 http.interceptors.request.use((config) => {
   // 在请求头中加入 token
