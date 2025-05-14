@@ -5,7 +5,7 @@ export default function About() {
     <>
       <p className='text-center'>
         <Link
-          className='underline transition-all hover:text-primary'
+          className='hover:text-primary underline transition-all'
           target='_blank'
           to='https://github.com/Darcrandex/vite-react-ts-template'
         >
@@ -16,7 +16,7 @@ export default function About() {
       <p className='mt-2 text-center'>
         <span>make by</span>
         <Link
-          className='mx-2 underline transition-all hover:text-primary'
+          className='hover:text-primary mx-2 underline transition-all'
           target='_blank'
           to='https://github.com/Darcrandex'
         >

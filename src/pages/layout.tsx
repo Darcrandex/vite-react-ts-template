@@ -16,12 +16,7 @@ const AnimatedOutlet = () => {
 
   return (
     <AnimatePresence mode='wait' initial={true}>
-      <motion.div
-        key={location.pathname}
-        animate={{ opacity: 1 }}
-        initial={{ opacity: 0 }}
-        exit={{ opacity: 0 }}
-      >
+      <motion.div key={location.pathname} animate={{ opacity: 1 }} initial={{ opacity: 0 }} exit={{ opacity: 0 }}>
         {element}
       </motion.div>
     </AnimatePresence>
@@ -33,9 +28,7 @@ export default function RootLayout() {
     <>
       <section className='flex h-screen flex-col items-center justify-center bg-gray-900 text-white'>
         <div className='w-[375px]'>
-          <header className='mb-6 text-center text-lg font-bold uppercase'>
-            react-ts-template
-          </header>
+          <header className='mb-6 text-center text-lg font-bold uppercase'>react-ts-template</header>
 
           <nav className='text-center'>
             {links.map((v) => (
@@ -43,10 +36,7 @@ export default function RootLayout() {
                 key={v.path}
                 to={v.path}
                 className={({ isActive }) =>
-                  cls(
-                    'px-2 transition-all duration-300',
-                    isActive ? 'text-primary !underline' : 'hover:!underline',
-                  )
+                  cls('px-2 transition-all duration-300', isActive ? 'text-primary !underline' : 'hover:!underline')
                 }
               >
                 {v.text}

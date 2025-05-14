@@ -1,8 +1,4 @@
-import {
-  AndroidOutlined,
-  AppleOutlined,
-  InfoCircleOutlined,
-} from '@ant-design/icons'
+import { AndroidOutlined, AppleOutlined, InfoCircleOutlined } from '@ant-design/icons'
 import { App, Button, Space } from 'antd'
 import { useCallback } from 'react'
 

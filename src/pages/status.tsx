@@ -20,22 +20,13 @@ function CounterView() {
 
   return (
     <div className='flex items-center justify-center'>
-      <button
-        type='button'
-        className='text-white'
-        onClick={() => decrementAsync()}
-        disabled={isPending}
-      >
+      <button type='button' className='text-white' onClick={() => decrementAsync()} disabled={isPending}>
         {isPending ? <LoadingOutlined /> : <MinusOutlined />}
       </button>
 
       <span className='w-28 text-center'>{counter}</span>
 
-      <button
-        type='button'
-        className='text-white'
-        onClick={() => setCounter((c) => c + 1)}
-      >
+      <button type='button' className='text-white' onClick={() => setCounter((c) => c + 1)}>
         <PlusOutlined />
       </button>
     </div>
