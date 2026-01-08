@@ -27,10 +27,10 @@ export default function RootLayout() {
   return (
     <>
       <section className='flex h-screen flex-col items-center justify-center bg-gray-900 text-white'>
-        <div className='w-[375px]'>
-          <header className='mb-6 text-center text-lg font-bold uppercase'>react-ts-template</header>
+        <div className='w-lg'>
+          <header className='mb-6 text-center text-3xl font-bold uppercase'>react-ts-template</header>
 
-          <nav className='text-center'>
+          <nav className='space-x-4 text-center text-2xl'>
             {links.map((v) => (
               <NavLink
                 key={v.path}
@@ -44,7 +44,7 @@ export default function RootLayout() {
             ))}
           </nav>
 
-          <main className='h-96 p-4'>
+          <main className='h-96 p-4 text-2xl'>
             <AnimatedOutlet />
           </main>
         </div>

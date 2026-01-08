@@ -1,6 +1,5 @@
 import { inspectorServer } from '@react-dev-inspector/vite-plugin'
 import tailwindcss from '@tailwindcss/vite'
-import legacy from '@vitejs/plugin-legacy'
 import react from '@vitejs/plugin-react-swc'
 import path from 'node:path'
 import { defineConfig, loadEnv } from 'vite'
@@ -12,7 +11,6 @@ export default defineConfig(({ mode }) => {
 
   return {
     plugins: [
-      legacy(),
       react(),
       tailwindcss(),
       inspectorServer(),
